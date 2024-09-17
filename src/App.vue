@@ -42,6 +42,9 @@ export default {
   <input type="email" v-model="userEmail" placeholder="Почта">
   <p className="error">{{error}}</p>
   <button @click="sendData()">Отправить</button>
+
+  <div v-if="this.users.length == 0" class="user"> Ничего нет </div>
+
 <div v-for="(el, index) in users" :key="index" class="user">
   <h3>{{el.name}}</h3>
   <p>{{el.email}} - <b>{{el.pass}}</b></p>
