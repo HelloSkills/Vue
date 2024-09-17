@@ -1,44 +1,33 @@
 <script>
 export default {
-data() {
-  return {
-    info: 'Title',
-    someInfo: 'Anons of message'
+  data() {
+    return {
+    userName: '',
+      userPass: '',
+      userEmail: ''
+    }
+  },
+  methods: {
+    insertData(val) {
+    this.userName = val
+    }
   }
-}
 }
 </script>
 
 <template>
-<h3>{{info}}</h3>
-  <p>{{someInfo}}</p>
 
-  <button type="button" @click="this.info = 'Some New'" class="btn">Отправить</button>
+  <input type="text" v-model="userName" placeholder="Имя">
+  <input type="password" v-model="userPass" placeholder="Пароль">
+  <input type="email" v-model="userEmail" placeholder="Почта">
+  <p>{{userName}}</p>
+  <p>{{userPass}}</p>
+  <p>{{userEmail}}</p>
+
 </template>
 
 
 <style scoped>
 
-h3 {
-  display:flex;
-  text-align: center;
-  color: green;
-  justify-content: center;
-  font-weight: lighter;
-}
-
-p {
-  color: rgb(203, 31, 31);
-  display:flex;
-  text-align: center;
-  justify-content: center;
-}
-
-.btn {
-  display:flex;
-  text-align: center;
-  justify-content: center;
-  width: 100%;
-}
 
 </style>
